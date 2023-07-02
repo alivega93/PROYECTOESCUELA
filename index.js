@@ -11,48 +11,69 @@ class Student {
     }; 
 }; 
 
-const Eduardo = new Student ("Eduardo", "Gali Vega", 5);
-const Constanza = new Student ("Constanza", "Ferrón Vega", 4);
-const LuisDaniel = new Student ("Luis Daniel", "Vega Jauckens", 3);
-const Leonardo = new Student ("Leonardo", "Gali Vega", 3);
-const Beleni = new Student ("Beleni", "Gali Vega", 3);
-const Jeronimo = new Student ("Jeronimo", "Vega Jauckens", 2);
-const Aitana = new Student ("Aitana", "Ferron Vega", 2);
-const Romina = new Student ("Romina", "Ferron Vega", 2);
-const Sofia = new Student ("Sofia", "Hemsworth Vega", 1);
-const Victoria = new Student ("Victoria", "Hemsworth Vega", 1);
-const Santiago = new Student ("Santiago", "Hemsworth Vega", 1);
-const Patricio = new Student ("Patricio", "Hemsworth Vega", 1); 
+const selectInput = document.querySelector('#groups');
+const submitBtn = document.querySelector('#submit-btn');
+const selectStudents = document.querySelector('#students');
+const selectlastname = document.querySelector('#studentslastname');
 
-console.log(Eduardo); 
-console.log(Constanza); 
-console.log(LuisDaniel); 
-console.log(Leonardo); 
-console.log(Beleni); 
-console.log(Jeronimo); 
-console.log(Aitana); 
-console.log(Romina); 
-console.log(Sofia); 
-console.log(Victoria); 
-console.log(Santiago); 
-console.log(Patricio); 
+const eduardo = new Student ("eduardo", "gali", 5);
+const constanza = new Student ("constanza", "ferrón", 4);
+const luis = new Student ("luis", "vega", 3);
+const isabella = new Student ("isabella", "hemsworth", 2);
 
-const Age = 4;
+let students = [eduardo, constanza, luis, isabella];
 
-switch (Age) {
-    case 5:
-      console.log(`El niño ${this.Name} pertenece al grupo E`);
-      break;
-    case 4:
-      console.log(`El niño ${this.Name} pertenece al grupo D`);
-      break;
-    case 3:
-      console.log(`El niño ${this.Name} pertenece al grupo C`);
-      break;
-    case 2:
-      console.log(`El niño ${this.Name} pertenece al grupo B`);
-      break; 
-      default:
-      console.log(`El niño ${this.Name} pertenece al grupo A`);
-      break;
-  }
+submitBtn.addEventListener('click', () => {
+  const selectedStudent = selectStudents.value;
+  console.log(selectedStudent);
+  let findStudent = students.find(student => student.Name === selectedStudent);
+  let groupSelected = selectInput.value;
+  findStudent.group = groupSelected;
+  console.log(selectedStudent, findStudent);
+})
+
+function CalcularPromedio(){
+  var V1 = document.getElementById ("n1").value
+  var V2 = document.getElementById ("n2").value
+  var V3 = document.getElementById ("n3").value
+  var pro = (parseFloat(V1)+parseFloat(V2)+parseFloat(V3))/3; 
+  document.getElementById("PromedioEduardo").innerHTML = pro; 
+}
+
+function CalcularPromedio(){
+  var V1 = document.getElementById ("n1").value
+  var V2 = document.getElementById ("n2").value
+  var V3 = document.getElementById ("n3").value
+  var pro = (parseFloat(V1)+parseFloat(V2)+parseFloat(V3))/3; 
+  document.getElementById("PromedioConstanza").innerHTML = pro; 
+}
+
+function CalcularPromedio(){
+  var V1 = document.getElementById ("n1").value
+  var V2 = document.getElementById ("n2").value
+  var V3 = document.getElementById ("n3").value
+  var pro = (parseFloat(V1)+parseFloat(V2)+parseFloat(V3))/3; 
+  document.getElementById("PromedioLuis").innerHTML = pro; 
+}
+
+function CalcularPromedio(){
+  var V1 = document.getElementById ("n1").value
+  var V2 = document.getElementById ("n2").value
+  var V3 = document.getElementById ("n3").value
+  var pro = (parseFloat(V1)+parseFloat(V2)+parseFloat(V3))/3; 
+  document.getElementById("PromedioIsa").innerHTML = pro; 
+}
+
+function CalcularPromedio(){
+  var V1 = document.getElementById ("n1").value
+  var V2 = document.getElementById ("n2").value
+  var V3 = document.getElementById ("n3").value
+  var pro = (parseFloat(V1)+parseFloat(V2)+parseFloat(V3))/3; 
+  document.getElementById("PromedioGrupal").innerHTML = pro; 
+}
+
+const numeros = [3, 23, 12];
+numeros.sort(function(a, b){return a - b});
+
+const numerosR = [3, 23, 12];
+numeros.sort(function(a, b){return b - a});
